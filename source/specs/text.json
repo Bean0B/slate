@@ -1,0 +1,17 @@
+{
+  "Description": "Content inside a text node, will be wrapped with responsive email html, dys-text nodes can be marked as editable or localizable. \nIf marked editable, this allows the template creator to specify content overrides for this piece of content, it is also considered localizable when marked as editable. \nIf marked localizable, then the content of the node can be replaced by locale specific content during the render pipeline. \nA key attribute can be added to this node to allow lookup by key instead of the content inside the node.\n",
+  "Tests": [
+    {
+      "Name": "basic-text",
+      "Description": "a basic example of using a dys-text tag\n",
+      "Data": {
+        "foo": "bar"
+      },
+      "Inputs": {
+        "DML": "<dys-block>\n  <dys-text>Hello @{foo}</dys-text>\n</dys-block> "
+      },
+      "Rendered": "\n  Hello bar\n",
+      "Exports": null
+    }
+  ]
+}

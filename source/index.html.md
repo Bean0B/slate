@@ -2,13 +2,10 @@
 title: API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
-  - ruby
-  - python
-  - javascript
+  - DML
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
+  - <a href='#'>Go to Dyspatch</a>
   - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
 includes:
@@ -17,19 +14,41 @@ includes:
 search: true
 ---
 
-# Introduction
+# DML Introduction
 
-Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Dyspatch Markup Language, DML was created for to make creating Dyspatch blocks easy.
 
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+# Components
 
-This example API documentation page was created with [Slate](https://github.com/lord/slate). Feel free to edit it and use it as a base for your own API's documentation.
+## dys-raw
+
+The raw tag is direct pass through and will not be wrapped by anything. 
+It will also not be parsed by Dyspatch.
+basic example of using a raw passthrough tag
+
+``` xml
+
+<!-- DML -->
+ <dys-block>
+    <dys-raw>
+        {{#thing}}
+          Content    
+        {{/thing}}
+    </dys-raw>
+</dys-block> 
+
+<!-- Rendered -->
+{{#thing}}
+    Content
+{{/thing}}
+```
+
 
 # Authentication
 
 > To authorize, use this code:
 
-```ruby
+``` DML
 require 'kittn'
 
 api = Kittn::APIClient.authorize!('meowmeowmeow')
